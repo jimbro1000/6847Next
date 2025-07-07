@@ -46,12 +46,12 @@ module timing(
 		.count(countx)
 	);
 	
-	wire maxy = format ? 258 : 311;
+	wire [8:0] maxy = format ? 258 : 311;
 	wire frameReset;
 	assign frameReset = (county == maxy);
 	
 	counter #(.WIDTH(9)) rowCount (
-		.clk(clock),
+		.clk(~rowReset),
 		.reset(frameReset),
 		.enable(1'b1),
 		.count(county)

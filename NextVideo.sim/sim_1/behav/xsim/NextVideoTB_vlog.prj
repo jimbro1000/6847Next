@@ -1,8 +1,11 @@
 # compile verilog/system verilog design source files
 sv xil_defaultlib  \
+"../../../../NextVideo.srcs/sources_1/new/counter.sv" \
 "../../../../NextVideo.srcs/sources_1/new/dataregister.sv" \
 "../../../../NextVideo.srcs/sources_1/new/nextvideo.sv" \
+"../../../../NextVideo.srcs/sources_1/new/pixelmux.sv" \
 "../../../../NextVideo.srcs/sources_1/new/registermultiplexer.sv" \
+"../../../../NextVideo.srcs/sources_1/new/timing.sv" \
 "../../../../NextVideo.srcs/sim_1/new/NextVideoTB.sv" \
 
 # compile glbl module

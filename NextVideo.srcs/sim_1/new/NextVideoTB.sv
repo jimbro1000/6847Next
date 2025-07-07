@@ -37,9 +37,7 @@ module NextVideoTB;
     bit NHS;
     bit NFS;
     bit NRC;
-    bit [3:0] Rout;
-    bit [3:0] Bout;
-    bit [3:0] Gout;
+    bit [11:0] rgbout;
     
     bit [7:0] dataInput;
 

@@ -3,97 +3,93 @@
    <wave_state>
    </wave_state>
    <db_ref_list>
-      <db_ref path="RegisterBlockTB_behav.wdb" id="1">
+      <db_ref path="NextVideoTB_behav.wdb" id="1">
          <top_modules>
-            <top_module name="RegisterBlockTB" />
+            <top_module name="NextVideoTB" />
             <top_module name="glbl" />
          </top_modules>
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="0.000 ns"></ZoomStartTime>
-      <ZoomEndTime time="171.401 ns"></ZoomEndTime>
-      <Cursor1Time time="92.800 ns"></Cursor1Time>
+      <ZoomStartTime time="9,999,757.247 ns"></ZoomStartTime>
+      <ZoomEndTime time="10,000,048.551 ns"></ZoomEndTime>
+      <Cursor1Time time="10,000,000.000 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="116"></NameColumnWidth>
+      <NameColumnWidth column_width="112"></NameColumnWidth>
       <ValueColumnWidth column_width="58"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="19" />
-   <wvobject fp_name="/RegisterBlockTB/select" type="array">
-      <obj_property name="ElementShortName">select[3:0]</obj_property>
-      <obj_property name="ObjectShortName">select[3:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/RegisterBlockTB/clock" type="logic">
+   <WVObjectSize size="18" />
+   <wvobject fp_name="/NextVideoTB/u_nextvideo/frametiming/clock" type="logic">
       <obj_property name="ElementShortName">clock</obj_property>
       <obj_property name="ObjectShortName">clock</obj_property>
    </wvobject>
-   <wvobject fp_name="/RegisterBlockTB/dataIn" type="array">
-      <obj_property name="ElementShortName">dataIn[7:0]</obj_property>
-      <obj_property name="ObjectShortName">dataIn[7:0]</obj_property>
+   <wvobject fp_name="/NextVideoTB/u_nextvideo/frametiming/portx" type="array">
+      <obj_property name="ElementShortName">portx[9:0]</obj_property>
+      <obj_property name="ObjectShortName">portx[9:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/RegisterBlockTB/nWE" type="logic">
-      <obj_property name="ElementShortName">nWE</obj_property>
-      <obj_property name="ObjectShortName">nWE</obj_property>
+   <wvobject fp_name="/NextVideoTB/u_nextvideo/frametiming/portendx" type="array">
+      <obj_property name="ElementShortName">portendx[9:0]</obj_property>
+      <obj_property name="ObjectShortName">portendx[9:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/RegisterBlockTB/dataOut" type="array">
-      <obj_property name="ElementShortName">dataOut[7:0]</obj_property>
-      <obj_property name="ObjectShortName">dataOut[7:0]</obj_property>
+   <wvobject fp_name="/NextVideoTB/u_nextvideo/frametiming/porty" type="array">
+      <obj_property name="ElementShortName">porty[8:0]</obj_property>
+      <obj_property name="ObjectShortName">porty[8:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/RegisterBlockTB/u_registerblock/multiplexer/select" type="array">
-      <obj_property name="ElementShortName">select[3:0]</obj_property>
-      <obj_property name="ObjectShortName">select[3:0]</obj_property>
+   <wvobject fp_name="/NextVideoTB/u_nextvideo/frametiming/portendy" type="array">
+      <obj_property name="ElementShortName">portendy[8:0]</obj_property>
+      <obj_property name="ObjectShortName">portendy[8:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/RegisterBlockTB/u_registerblock/multiplexer/clock" type="logic">
-      <obj_property name="ElementShortName">clock</obj_property>
-      <obj_property name="ObjectShortName">clock</obj_property>
+   <wvobject fp_name="/NextVideoTB/u_nextvideo/frametiming/format" type="logic">
+      <obj_property name="ElementShortName">format</obj_property>
+      <obj_property name="ObjectShortName">format</obj_property>
    </wvobject>
-   <wvobject fp_name="/RegisterBlockTB/u_registerblock/multiplexer/selected" type="array">
-      <obj_property name="ElementShortName">selected[0:15]</obj_property>
-      <obj_property name="ObjectShortName">selected[0:15]</obj_property>
+   <wvobject fp_name="/NextVideoTB/u_nextvideo/frametiming/sprite" type="logic">
+      <obj_property name="ElementShortName">sprite</obj_property>
+      <obj_property name="ObjectShortName">sprite</obj_property>
    </wvobject>
-   <wvobject fp_name="/RegisterBlockTB/u_registerblock/multiplexer/hold" type="array">
-      <obj_property name="ElementShortName">hold[3:0]</obj_property>
-      <obj_property name="ObjectShortName">hold[3:0]</obj_property>
+   <wvobject fp_name="/NextVideoTB/u_nextvideo/frametiming/nhsync" type="logic">
+      <obj_property name="ElementShortName">nhsync</obj_property>
+      <obj_property name="ObjectShortName">nhsync</obj_property>
    </wvobject>
-   <wvobject fp_name="/RegisterBlockTB/u_registerblock/register0/dataIn" type="array">
-      <obj_property name="ElementShortName">dataIn[7:0]</obj_property>
-      <obj_property name="ObjectShortName">dataIn[7:0]</obj_property>
+   <wvobject fp_name="/NextVideoTB/u_nextvideo/frametiming/nvsync" type="logic">
+      <obj_property name="ElementShortName">nvsync</obj_property>
+      <obj_property name="ObjectShortName">nvsync</obj_property>
    </wvobject>
-   <wvobject fp_name="/RegisterBlockTB/u_registerblock/register0/dataOut" type="array">
-      <obj_property name="ElementShortName">dataOut[7:0]</obj_property>
-      <obj_property name="ObjectShortName">dataOut[7:0]</obj_property>
+   <wvobject fp_name="/NextVideoTB/u_nextvideo/frametiming/state" type="array">
+      <obj_property name="ElementShortName">state[1:0]</obj_property>
+      <obj_property name="ObjectShortName">state[1:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/RegisterBlockTB/u_registerblock/register0/load" type="logic">
-      <obj_property name="ElementShortName">load</obj_property>
-      <obj_property name="ObjectShortName">load</obj_property>
+   <wvobject fp_name="/NextVideoTB/u_nextvideo/frametiming/countx" type="array">
+      <obj_property name="ElementShortName">countx[9:0]</obj_property>
+      <obj_property name="ObjectShortName">countx[9:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/RegisterBlockTB/u_registerblock/register0/selected" type="logic">
-      <obj_property name="ElementShortName">selected</obj_property>
-      <obj_property name="ObjectShortName">selected</obj_property>
+   <wvobject fp_name="/NextVideoTB/u_nextvideo/frametiming/county" type="array">
+      <obj_property name="ElementShortName">county[8:0]</obj_property>
+      <obj_property name="ObjectShortName">county[8:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/RegisterBlockTB/u_registerblock/register0/data" type="array">
-      <obj_property name="ElementShortName">data[7:0]</obj_property>
-      <obj_property name="ObjectShortName">data[7:0]</obj_property>
+   <wvobject fp_name="/NextVideoTB/u_nextvideo/frametiming/rowReset" type="logic">
+      <obj_property name="ElementShortName">rowReset</obj_property>
+      <obj_property name="ObjectShortName">rowReset</obj_property>
    </wvobject>
-   <wvobject fp_name="/RegisterBlockTB/u_registerblock/register1/dataIn" type="array">
-      <obj_property name="ElementShortName">dataIn[7:0]</obj_property>
-      <obj_property name="ObjectShortName">dataIn[7:0]</obj_property>
+   <wvobject fp_name="/NextVideoTB/u_nextvideo/frametiming/maxy" type="logic">
+      <obj_property name="ElementShortName">maxy</obj_property>
+      <obj_property name="ObjectShortName">maxy</obj_property>
    </wvobject>
-   <wvobject fp_name="/RegisterBlockTB/u_registerblock/register1/dataOut" type="array">
-      <obj_property name="ElementShortName">dataOut[7:0]</obj_property>
-      <obj_property name="ObjectShortName">dataOut[7:0]</obj_property>
+   <wvobject fp_name="/NextVideoTB/u_nextvideo/frametiming/frameReset" type="logic">
+      <obj_property name="ElementShortName">frameReset</obj_property>
+      <obj_property name="ObjectShortName">frameReset</obj_property>
    </wvobject>
-   <wvobject fp_name="/RegisterBlockTB/u_registerblock/register1/load" type="logic">
-      <obj_property name="ElementShortName">load</obj_property>
-      <obj_property name="ObjectShortName">load</obj_property>
+   <wvobject fp_name="/NextVideoTB/u_nextvideo/frametiming/top" type="logic">
+      <obj_property name="ElementShortName">top</obj_property>
+      <obj_property name="ObjectShortName">top</obj_property>
    </wvobject>
-   <wvobject fp_name="/RegisterBlockTB/u_registerblock/register1/selected" type="logic">
-      <obj_property name="ElementShortName">selected</obj_property>
-      <obj_property name="ObjectShortName">selected</obj_property>
+   <wvobject fp_name="/NextVideoTB/u_nextvideo/frametiming/left" type="logic">
+      <obj_property name="ElementShortName">left</obj_property>
+      <obj_property name="ObjectShortName">left</obj_property>
    </wvobject>
-   <wvobject fp_name="/RegisterBlockTB/u_registerblock/register1/data" type="array">
-      <obj_property name="ElementShortName">data[7:0]</obj_property>
-      <obj_property name="ObjectShortName">data[7:0]</obj_property>
+   <wvobject fp_name="/NextVideoTB/u_nextvideo/frametiming/view" type="logic">
+      <obj_property name="ElementShortName">view</obj_property>
+      <obj_property name="ObjectShortName">view</obj_property>
    </wvobject>
 </wave_config>
