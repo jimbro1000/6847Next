@@ -24,10 +24,9 @@ module dataregister(
     input logic [7:0] dataIn,
     output logic [7:0] dataOut,
     input bit load,
-    input bit selected
+    input bit selected,
+    output bit [7:0] data
     );
-    
-    bit [7:0] data;
     
     assign dataOut = selected ? data : 8'bzzzzzzzz;
     

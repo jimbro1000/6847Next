@@ -23,9 +23,9 @@
 module timing(
     input clock,
     input [9:0] portx,
-    input [9:0] portendx,
+    input [5:0] width,
     input [8:0] porty,
-    input [8:0] portendy,
+    input [7:0] height,
     input format,
     input sprite,
     output nhsync,
@@ -35,11 +35,16 @@ module timing(
     
     wire [9:0] countx;
     wire [8:0] county;
+    wire [9:0] portendx;
+    wire [8:0] portendy;
+    
+    assign portendx = portx + (width * 8);
+    assign portendy = porty + height;
     
     wire rowReset;
     assign rowReset = (countx == 458);
     
-    counter #(.WIDTH(10)) colCount (
+    counter_doubleedge #(.WIDTH(10)) colCount (
 		.clk(clock),
 		.reset(rowReset),
 		.enable(1'b1),
