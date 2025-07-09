@@ -48,7 +48,11 @@ module nextvideo(
     wire [7:0] paletteSelect;
     wire [7:0] paletteData;
     wire [7:0] geometrySelect;
-    wire [7:0] geometryData;
+    wire [9:0] geometryPortx;
+    wire [8:0] geometryPorty;
+    wire [5:0] geometryWidth;
+    wire [7:0] geometryHeight;
+    wire [8:0] geometryMaxy;
     wire [7:0] spriteId;
     wire [7:0] spriteSelect;
     wire [7:0] spriteData;
@@ -65,27 +69,32 @@ module nextvideo(
     bit [7:0] height;
     bit [9:0] portx;
     bit [8:0] porty;
+    bit [8:0] maxy;
     bit nload;
     bit compatibilitymode;
+    bit format;
     bit zeromode;
     bit load;
     
     assign load = !CS || E || RnW;
     assign compatibilitymode = modeRegister[0];
     assign zeromode = modeRegister[6];
+    assign format = modeRegister[7];
     
-    assign width = compatibilitymode ? 40 : 32;
-    assign height = compatibilitymode ? 240 : 192;
-    assign portx = compatibilitymode ? 97 : 129;
-    assign porty = compatibilitymode ? 39 : 63;
-    
+    assign width = compatibilitymode ? geometryWidth : 32;
+    assign height = compatibilitymode ? geometryHeight : 192;
+    assign portx = compatibilitymode ? geometryPortx : 129;
+    assign porty = compatibilitymode ? geometryPorty : 63;
+    assign maxy = compatibilitymode ? geometryMaxy : format ? 258 : 311;
+
     timing frametiming(
         .clock(vclk),
         .portx(129),
         .width(width),
         .porty(63),
         .height(height),
-        .format(0),
+        .maxy(maxy),
+        .format(format),
         .sprite(0),
         .nhsync(NHS),
         .nvsync(NFS),
@@ -166,13 +175,18 @@ module nextvideo(
         .selected (selected_register[6]),
         .data (geometrySelect)
     );
-    
-    dataregister register7(
+
+    geometry register7(
         .dataIn (data),
         .dataOut (dataOut),
         .load (load),
         .selected (selected_register[7]),
-        .data (geometryData)
+        .index (geometrySelect),
+        .portx (geometryPortx),
+        .porty (geometryPorty),
+        .width (geometryWidth),
+        .height (geometryHeight),
+        .maxy (geometryMaxy)
     );
     
     dataregister register8(

@@ -26,6 +26,7 @@ module timing(
     input [5:0] width,
     input [8:0] porty,
     input [7:0] height,
+    input [8:0] maxy,
     input format,
     input sprite,
     output nhsync,
@@ -68,7 +69,6 @@ module timing(
 	   .count(preloadcount)
 	);
 	
-	wire [8:0] maxy = format ? 258 : 311;
 	wire frameReset;
 	assign frameReset = (county == maxy);
 	
