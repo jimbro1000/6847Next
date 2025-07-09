@@ -32,7 +32,7 @@ module nextvideo(
     input nAS, // alpha/semigraphic display
     input inv, // inverse alpha
     input ext, // external alpha
-    output da0, // preload data
+    output bit da0, // preload data
     output NHS, // horizontal sync active low
     output NFS, // vertical sync active low
     output NRC, // char row clock
@@ -65,11 +65,19 @@ module nextvideo(
     bit [7:0] height;
     bit [9:0] portx;
     bit [8:0] porty;
+    bit nload;
+    bit compatibilitymode;
+    bit zeromode;
+    bit load;
     
-    assign width = 32;
-    assign height = 192;
-    assign portx = 129;
-    assign porty = 63;
+    assign load = !CS || E || RnW;
+    assign compatibilitymode = modeRegister[0];
+    assign zeromode = modeRegister[6];
+    
+    assign width = compatibilitymode ? 40 : 32;
+    assign height = compatibilitymode ? 240 : 192;
+    assign portx = compatibilitymode ? 97 : 129;
+    assign porty = compatibilitymode ? 39 : 63;
     
     timing frametiming(
         .clock(vclk),
@@ -81,8 +89,13 @@ module nextvideo(
         .sprite(0),
         .nhsync(NHS),
         .nvsync(NFS),
-        .state(framestate)
+        .state(framestate),
+        .nload(nload)
     );
+    
+    always @(posedge nload) begin
+        da0 = ~da0;
+    end
     
     pixelmux pixelmultipler(
         .state(framestate),
@@ -99,7 +112,7 @@ module nextvideo(
     );
     
     dataregister register0(
-        .dataIn (dataIn),
+        .dataIn (data),
         .dataOut (dataOut),
         .load (load),
         .selected (selected_register[0]),
@@ -107,7 +120,7 @@ module nextvideo(
     );
     
     dataregister register1(
-        .dataIn (dataIn),
+        .dataIn (data),
         .dataOut (dataOut),
         .load (load),
         .selected (selected_register[1]),
@@ -115,7 +128,7 @@ module nextvideo(
     );
     
     dataregister register2(
-        .dataIn (dataIn),
+        .dataIn (data),
         .dataOut (dataOut),
         .load (load),
         .selected (selected_register[2]),
@@ -123,7 +136,7 @@ module nextvideo(
     );
     
     dataregister register3(
-        .dataIn (dataIn),
+        .dataIn (data),
         .dataOut (dataOut),
         .load (load),
         .selected (selected_register[3]),
@@ -131,7 +144,7 @@ module nextvideo(
     );
     
     dataregister register4(
-        .dataIn (dataIn),
+        .dataIn (data),
         .dataOut (dataOut),
         .load (load),
         .selected (selected_register[4]),
@@ -139,7 +152,7 @@ module nextvideo(
     );
     
     dataregister register5(
-        .dataIn (dataIn),
+        .dataIn (data),
         .dataOut (dataOut),
         .load (load),
         .selected (selected_register[5]),
@@ -147,7 +160,7 @@ module nextvideo(
     );
     
     dataregister register6(
-        .dataIn (dataIn),
+        .dataIn (data),
         .dataOut (dataOut),
         .load (load),
         .selected (selected_register[6]),
@@ -155,7 +168,7 @@ module nextvideo(
     );
     
     dataregister register7(
-        .dataIn (dataIn),
+        .dataIn (data),
         .dataOut (dataOut),
         .load (load),
         .selected (selected_register[7]),
@@ -163,7 +176,7 @@ module nextvideo(
     );
     
     dataregister register8(
-        .dataIn (dataIn),
+        .dataIn (data),
         .dataOut (dataOut),
         .load (load),
         .selected (selected_register[8]),
@@ -171,7 +184,7 @@ module nextvideo(
     );
     
     dataregister register9(
-        .dataIn (dataIn),
+        .dataIn (data),
         .dataOut (dataOut),
         .load (load),
         .selected (selected_register[9]),
@@ -179,7 +192,7 @@ module nextvideo(
     );
     
     dataregister register10(
-        .dataIn (dataIn),
+        .dataIn (data),
         .dataOut (dataOut),
         .load (load),
         .selected (selected_register[10]),
@@ -187,7 +200,7 @@ module nextvideo(
     );
     
     dataregister register11(
-        .dataIn (dataIn),
+        .dataIn (data),
         .dataOut (dataOut),
         .load (load),
         .selected (selected_register[11]),
@@ -195,7 +208,7 @@ module nextvideo(
     );
     
     dataregister register12(
-        .dataIn (dataIn),
+        .dataIn (data),
         .dataOut (dataOut),
         .load (load),
         .selected (selected_register[12]),
@@ -203,7 +216,7 @@ module nextvideo(
     );
     
     dataregister register13(
-        .dataIn (dataIn),
+        .dataIn (data),
         .dataOut (dataOut),
         .load (load),
         .selected (selected_register[13]),
@@ -211,7 +224,7 @@ module nextvideo(
     );
     
     dataregister register14(
-        .dataIn (dataIn),
+        .dataIn (data),
         .dataOut (dataOut),
         .load (load),
         .selected (selected_register[14]),
@@ -219,7 +232,7 @@ module nextvideo(
     );
     
     dataregister register15(
-        .dataIn (dataIn),
+        .dataIn (data),
         .dataOut (dataOut),
         .load (load),
         .selected (selected_register[15]),

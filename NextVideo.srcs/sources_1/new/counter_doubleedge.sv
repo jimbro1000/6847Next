@@ -38,14 +38,14 @@ module counter_doubleedge
 
 	assign count = pCount + nCount;
 
-	always @(posedge clk, posedge reset) begin
+	always @(posedge clk) begin
 		if (reset)
 			pCount <= 0;
 		else if (enable)
 			pCount <= pCount + 1;
 	end
 
-	always @(negedge clk, posedge reset) begin
+	always @(negedge clk) begin
 		if (reset)
 			nCount <= 0;
 		else if (enable)

@@ -38,6 +38,7 @@ module NextVideoTB;
     bit NFS;
     bit NRC;
     bit [11:0] rgbout;
+    bit nload;
     
     bit [7:0] dataInput;
 

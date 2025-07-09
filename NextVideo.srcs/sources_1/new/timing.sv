@@ -30,16 +30,22 @@ module timing(
     input sprite,
     output nhsync,
     output nvsync,
-    output [1:0] state
+    output [1:0] state,
+    output nload
     );
     
     wire [9:0] countx;
     wire [8:0] county;
+    wire [1:0] preloadcount;
     wire [9:0] portendx;
     wire [8:0] portendy;
+    wire [9:0] preload;
+    wire [9:0] preloadend;
     
     assign portendx = portx + (width * 8);
     assign portendy = porty + height;
+    assign preload = portx - 8;
+    assign preloadend = portendx - 8;
     
     wire rowReset;
     assign rowReset = (countx == 458);
@@ -49,6 +55,17 @@ module timing(
 		.reset(rowReset),
 		.enable(1'b1),
 		.count(countx)
+	);
+	
+	wire loadReset;
+	wire loadEnable;
+	assign loadReset = (countx < preload);
+	assign loadEnable =  (countx < preloadend) && (county > porty) && (county <= porty + height);
+	counter #(.WIDTH(2)) loadCount (
+	   .clk(clock),
+	   .reset(loadReset),
+	   .enable(loadEnable),
+	   .count(preloadcount)
 	);
 	
 	wire [8:0] maxy = format ? 258 : 311;
@@ -76,4 +93,5 @@ module timing(
     assign state = top ? 2'b00 : left ? 2'b01 : view ? 2'b10 : 2'b11;
     assign nvsync = state != 2'b00;
     assign nhsync = state != 2'b01;
+	assign nload = preloadcount != 2'b00;
 endmodule

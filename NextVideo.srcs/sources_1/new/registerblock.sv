@@ -29,9 +29,9 @@ module registerblock(
     output [7:0] dataOut
 );
 
-bit load;
 logic [7:0] data;
 
+bit load;
 assign load = clock || RnW;
 assign dataOut = enable ? data : 8'bzzzzzzzz;
 

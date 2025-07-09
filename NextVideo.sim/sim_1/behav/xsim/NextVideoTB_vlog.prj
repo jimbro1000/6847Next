@@ -1,5 +1,5 @@
 # compile verilog/system verilog design source files
-sv xil_defaultlib  \
+sv xil_defaultlib  --include "C:/Xilinx/2025.1/Vivado/data/rsb/busdef" \
 "../../../../NextVideo.srcs/sources_1/new/counter.sv" \
 "../../../../NextVideo.srcs/sources_1/new/counter_doubleedge.sv" \
 "../../../../NextVideo.srcs/sources_1/new/dataregister.sv" \
