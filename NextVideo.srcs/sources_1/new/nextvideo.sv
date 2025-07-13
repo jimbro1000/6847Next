@@ -19,12 +19,12 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
-
 module nextvideo(
+    input gclk,
     inout logic [7:0] data, // 8 bit data bus
     input RnW, // read high, write low
     input CS, // chip select active high
-    input [3:0] address, // register address
+    input [3:0] regaddress, // register address
     input E, // main clock
     input vclk, // video clock
     input [3:0] gm, // video mode
@@ -32,7 +32,7 @@ module nextvideo(
     input nAS, // alpha/semigraphic display
     input inv, // inverse alpha
     input ext, // external alpha
-    output bit da0, // preload data
+    output logic [12:0] da, // data address - da[0] = data preload
     output NHS, // horizontal sync active low
     output NFS, // vertical sync active low
     output NRC, // char row clock
@@ -75,11 +75,26 @@ module nextvideo(
     bit format;
     bit zeromode;
     bit load;
+    bit graphicload;
+    bit [7:0] graphicdata;
+    bit [12:0] address;
+    bit [2:0] modeselection;
+    bit extmode;
+    bit zeropalette;
+    bit portenable;
     
-    assign load = !CS || E || RnW;
+    assign load = !CS || E || RnW; // edge trigger for register load - active low
+    assign graphicload = ~E; // active low signal for routing graphic data instead of register data
     assign compatibilitymode = modeRegister[0];
+    assign extmode = modeRegister[0] ? modeRegister[2] : 1'b0;
     assign zeromode = modeRegister[6];
     assign format = modeRegister[7];
+    assign portenable = (framestate == 2'b11);
+    
+    always @(graphicload, data) begin
+        if (graphicload)
+            graphicdata = data;
+    end
     
     assign width = compatibilitymode ? geometryWidth : 32;
     assign height = compatibilitymode ? geometryHeight : 192;
@@ -102,9 +117,34 @@ module nextvideo(
         .nload(nload)
     );
     
-    always @(posedge nload) begin
-        da0 = ~da0;
-    end
+    videomodeselect modeselect(
+        .nAG (nAG),
+        .nAS (nAS),
+        .GM (gm),
+        .extMode (extmode),
+        .zero (zeromode),
+        .modeselect (modeselection)
+    );
+    
+    zeroramvideo zeroram(
+        .clock (vclk),
+        .leftdata (zeroLeft),
+        .rightdata (zeroRight),
+        .colours (zeroColour),
+        .enable (portenable),
+        .nHS (NHS),
+        .load (nload),
+        .palette (zeropalette)
+    );
+    
+    counter #(.WIDTH(13)) addresscounter(
+        .clk (nload),
+        .reset (NFS),
+        .enable (1'b1),
+        .count (address)
+    );
+    
+    assign da = address;
     
     pixelmux pixelmultipler(
         .state(framestate),
@@ -115,7 +155,7 @@ module nextvideo(
     );
     
     registermultiplexer top_level_register_block (
-        .select (address),
+        .select (regaddress),
         .enable (CS),
         .selected (selected_register)
     );

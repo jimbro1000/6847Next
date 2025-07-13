@@ -1,12 +1,15 @@
 # compile verilog/system verilog design source files
 sv xil_defaultlib  --include "C:/Xilinx/2025.1/Vivado/data/rsb/busdef" \
+"../../../../NextVideo.srcs/sources_1/new/count_extender.sv" \
 "../../../../NextVideo.srcs/sources_1/new/counter.sv" \
-"../../../../NextVideo.srcs/sources_1/new/counter_doubleedge.sv" \
 "../../../../NextVideo.srcs/sources_1/new/dataregister.sv" \
+"../../../../NextVideo.srcs/sources_1/new/geometry.sv" \
 "../../../../NextVideo.srcs/sources_1/new/nextvideo.sv" \
 "../../../../NextVideo.srcs/sources_1/new/pixelmux.sv" \
 "../../../../NextVideo.srcs/sources_1/new/registermultiplexer.sv" \
 "../../../../NextVideo.srcs/sources_1/new/timing.sv" \
+"../../../../NextVideo.srcs/sources_1/new/videomodeselect.sv" \
+"../../../../NextVideo.srcs/sources_1/new/zeroramvideo.sv" \
 "../../../../NextVideo.srcs/sim_1/new/NextVideoTB.sv" \
 
 # compile glbl module

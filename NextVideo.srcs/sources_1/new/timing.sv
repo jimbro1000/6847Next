@@ -51,7 +51,7 @@ module timing(
     wire rowReset;
     assign rowReset = (countx == 458);
     
-    counter_doubleedge #(.WIDTH(10)) colCount (
+    count_extender #(.WIDTH(10)) colCount (
 		.clk(clock),
 		.reset(rowReset),
 		.enable(1'b1),

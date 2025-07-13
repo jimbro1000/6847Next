@@ -22,7 +22,8 @@
 
 module NextVideoTB;
 
-    bit [3:0] address;
+    bit gclk;
+    bit [3:0] regaddress;
     wire [7:0] data;
     bit E;
     bit CS;
@@ -33,7 +34,7 @@ module NextVideoTB;
     bit nAS;
     bit inv;
     bit ext;
-    bit da0;
+    bit [12:0] da;
     bit NHS;
     bit NFS;
     bit NRC;
@@ -49,7 +50,7 @@ module NextVideoTB;
     initial begin
         CS = 1'b1; // enable chip
         dataInput = 8'h55; // initial bus data
-        address = 4'b0000; // select register 0
+        regaddress = 4'b0000; // select register 0
         RnW = 1'b1; // read mode (data should be undetermined
         E = 1'b1; 
         #10
@@ -59,7 +60,7 @@ module NextVideoTB;
         #10
         E = ~E; // rise
         #10
-        address = 4'b0001; // register 1
+        regaddress = 4'b0001; // register 1
         dataInput = ~dataInput; // invert data bus
         RnW = ~RnW; // read
         #10
@@ -75,7 +76,7 @@ module NextVideoTB;
         #10
         RnW = ~RnW; // read
         #10
-        address = 4'b0010; // register 2
+        regaddress = 4'b0010; // register 2
         dataInput = ~dataInput; // invert data bus
         RnW = ~RnW; // write
         #10
@@ -85,7 +86,7 @@ module NextVideoTB;
         #10
         E = ~E; //rise
         #10
-        address = 4'b0011;
+        regaddress = 4'b0011;
         dataInput = ~dataInput;
         RnW = ~RnW;
         #10
@@ -95,7 +96,7 @@ module NextVideoTB;
         #10
         E = ~E;        
         #10
-        address = 4'b0100;
+        regaddress = 4'b0100;
         dataInput = ~dataInput;
         RnW = ~RnW;
         #10
@@ -103,7 +104,36 @@ module NextVideoTB;
         #10
         RnW = 1'b1;
         #10
-        E = ~E;        
+        E = ~E;
+        #10   
+        regaddress = 4'b0000; 
+        dataInput = 8'b00000000;
+        RnW = 1'b0;
+        #10
+        E = ~E;
+        #10
+        E = ~E; 
+        #10
+        regaddress = 4'b0001;
+        dataInput = 8'b11010100;
+        #10
+        E = ~E;
+        #10
+        E = ~E;
+        #10
+        regaddress = 4'b0010;
+        dataInput = ~dataInput;
+        #10
+        E = ~E;
+        #10
+        E = ~E;
+        #10
+        regaddress = 4'b0011;
+        dataInput = 8'b00010010; 
+        #10
+        E = ~E;
+        #10
+        E = ~E;
     end
 
 endmodule
