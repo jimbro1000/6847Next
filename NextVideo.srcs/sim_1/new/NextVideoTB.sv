@@ -42,98 +42,58 @@ module NextVideoTB;
     bit nload;
     
     bit [7:0] dataInput;
+    
+    bit [1:0] clk;
+    reg [2:0] uclk;
+    reg testready;
+    reg [8:0] rowCount;
+    
+    initial uclk = 3'b100;
+    // vclk clock cycle is 558.7302 ns
+    // E clock cycle is 1117.46 ns
+    always #139 uclk = uclk + 3'b001;
+    
+    initial gclk = 0;
+    always #1 gclk = ~gclk;
+    
+    assign vclk = testready ? uclk[0] : 3'b000;
+    
+    assign E = uclk[2];
 
     assign data = !RnW ? dataInput : 8'bzzzzzzzz;
+    
+    initial CS = 1'b1;
+    initial testready = 1'b0;
 
     nextvideo   u_nextvideo (.*);
     
     initial begin
-        CS = 1'b1; // enable chip
-        dataInput = 8'h55; // initial bus data
-        regaddress = 4'b0000; // select register 0
-        RnW = 1'b1; // read mode (data should be undetermined
-        E = 1'b1; 
-        #10
-        E = ~E; // clock triggers on falling edge
-        #10
-        RnW = ~RnW; // write enable
-        #10
-        E = ~E; // rise
-        #10
-        regaddress = 4'b0001; // register 1
-        dataInput = ~dataInput; // invert data bus
-        RnW = ~RnW; // read
-        #10
-        E = ~E; // fall
-        #10
-        RnW = ~RnW; // write
-        #10
-        E = ~E; // rise
-        #10
-        E = ~E; // fall - data held should change
-        #10
-        E = ~E; // rise
-        #10
-        RnW = ~RnW; // read
-        #10
-        regaddress = 4'b0010; // register 2
-        dataInput = ~dataInput; // invert data bus
-        RnW = ~RnW; // write
-        #10
-        E = ~E;// fall
-        #10
-        RnW = 1'b1; // read
-        #10
-        E = ~E; //rise
-        #10
-        regaddress = 4'b0011;
-        dataInput = ~dataInput;
-        RnW = ~RnW;
-        #10
-        E = ~E;
-        #10
-        RnW = 1'b1;
-        #10
-        E = ~E;        
-        #10
-        regaddress = 4'b0100;
-        dataInput = ~dataInput;
-        RnW = ~RnW;
-        #10
-        E = ~E;
-        #10
-        RnW = 1'b1;
-        #10
-        E = ~E;
-        #10   
-        regaddress = 4'b0000; 
-        dataInput = 8'b00000000;
+        #139
+        regaddress = 4'b0000; //operation mode
+        dataInput = 8'b01000000; //zero ram mode
         RnW = 1'b0;
-        #10
-        E = ~E;
-        #10
-        E = ~E; 
-        #10
-        regaddress = 4'b0001;
+        #1112
+        regaddress = 4'b0001; //zero reg left
         dataInput = 8'b11010100;
-        #10
-        E = ~E;
-        #10
-        E = ~E;
-        #10
-        regaddress = 4'b0010;
-        dataInput = ~dataInput;
-        #10
-        E = ~E;
-        #10
-        E = ~E;
-        #10
-        regaddress = 4'b0011;
+        #1112
+        regaddress = 4'b0010; //zero reg right
+        dataInput = 8'b00101011;
+        #1112
+        regaddress = 4'b0011; //zero reg colours
         dataInput = 8'b00010010; 
-        #10
-        E = ~E;
-        #10
-        E = ~E;
+        #1112
+        testready = ~testready; //enable assertions
+        regaddress = 4'b0100; // palette select
+        dataInput = 8'b00001111;
+        #1112
+        RnW = 1'b1;
+    end
+    
+    always @(negedge NHS, negedge NFS) begin
+        if (NFS)
+            rowCount = 0;
+        else
+            rowCount = rowCount + 1;
     end
 
 endmodule

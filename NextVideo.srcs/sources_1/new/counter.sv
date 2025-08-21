@@ -21,19 +21,19 @@
 
 module counter
 	#(parameter WIDTH = 8)
-  ( input clk,
-    input reset,
-	 input enable,
+  ( input bit clk,
+    input bit reset, // active high
+	input bit enable, // active high
     output reg [WIDTH-1:0] count
     );
-	 
+    
 	initial begin
 		count = 0;
 	end
 	
-	always @(negedge clk) begin
+	always @(negedge clk or posedge reset) begin
 		if (reset)
-			count <= 0;
+			count <= '0;
 		else if (enable)
 			count <= count + 1;
 	end

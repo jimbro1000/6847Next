@@ -3,9 +3,9 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date: 12.07.2025 19:23:38
+// Create Date: 19.07.2025 12:27:46
 // Design Name: 
-// Module Name: count_extender
+// Module Name: address_counter
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 
@@ -19,24 +19,21 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
-module count_extender
-	#(parameter WIDTH = 8)
-(
-    input bit clk,
+
+module address_counter(
+input clk,
     input reset,
-	input enable,
-    output [WIDTH-1:0] count
-);
-	 
-	reg [WIDTH-2:0] cheatCount;
+    output reg [12:0] count
+    );
 	 
 	initial begin
-		cheatCount = 0;
+		count = 0;
 	end
-
-	assign count = {cheatCount, clk};
-
-	always @(negedge clk) begin
-	    cheatCount = reset ? 0 : enable ? cheatCount + 1 : cheatCount;
+	
+	always @(posedge clk, posedge reset) begin
+		if (reset)
+			count = 0;
+		else
+			count = count + 1;
 	end
 endmodule

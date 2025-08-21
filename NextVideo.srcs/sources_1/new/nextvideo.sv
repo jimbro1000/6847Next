@@ -27,17 +27,22 @@ module nextvideo(
     input [3:0] regaddress, // register address
     input E, // main clock
     input vclk, // video clock
-    input [3:0] gm, // video mode
+    input [2:0] gm, // video mode
     input nAG, // alpga/graphic display
     input nAS, // alpha/semigraphic display
     input inv, // inverse alpha
     input ext, // external alpha
+    input PALClk,
     output logic [12:0] da, // data address - da[0] = data preload
     output NHS, // horizontal sync active low
     output NFS, // vertical sync active low
     output NRC, // char row clock
-    output [11:0] rgbout
+    output [11:0] rgbout,
+    output ModClk,
+    output format
     );
+    
+    assign ModClk = format ? vclk : PALClk;
     
     bit [7:0] dataOut;
     bit selected_register[16];
@@ -45,8 +50,8 @@ module nextvideo(
     wire [7:0] zeroLeft;
     wire [7:0] zeroRight;
     wire [7:0] zeroColour;
-    wire [7:0] paletteSelect;
-    wire [7:0] paletteData;
+//    wire [7:0] paletteSelect;
+//    wire [7:0] paletteData;
     wire [7:0] geometrySelect;
     wire [9:0] geometryPortx;
     wire [8:0] geometryPorty;
@@ -72,7 +77,6 @@ module nextvideo(
     bit [8:0] maxy;
     bit nload;
     bit compatibilitymode;
-    bit format;
     bit zeromode;
     bit load;
     bit graphicload;
@@ -80,7 +84,7 @@ module nextvideo(
     bit [12:0] address;
     bit [2:0] modeselection;
     bit extmode;
-    bit zeropalette;
+    bit [3:0] zeropalette;
     bit portenable;
     
     assign load = !CS || E || RnW; // edge trigger for register load - active low
@@ -104,12 +108,11 @@ module nextvideo(
 
     timing frametiming(
         .clock(vclk),
-        .portx(129),
+        .portx(portx),
         .width(width),
-        .porty(63),
+        .porty(porty),
         .height(height),
         .maxy(maxy),
-        .format(format),
         .sprite(0),
         .nhsync(NHS),
         .nvsync(NFS),
@@ -137,20 +140,31 @@ module nextvideo(
         .palette (zeropalette)
     );
     
-    counter #(.WIDTH(13)) addresscounter(
+    address_counter addresscounter(
         .clk (nload),
-        .reset (NFS),
-        .enable (1'b1),
+        .reset (!NFS),
         .count (address)
     );
     
     assign da = address;
     
+    bit [11:0] viewportStream; 
+    bit [4:0] palette_id;
+    
+    palettesource palettemultiplexer(
+        .source (2'b11),
+        .alpha (2'b00),
+        .semi (4'b0000),
+        .bitmap (4'b0000),
+        .zero (zeropalette),
+        .palette_id (palette_id)
+    );
+    
     pixelmux pixelmultipler(
         .state(framestate),
         .stream0(12'b000000000000),
         .stream1(12'b110011001100),
-        .stream2(12'b001100111111),
+        .stream2(viewportStream),
         .streamout(rgbout)
     );
     
@@ -192,21 +206,32 @@ module nextvideo(
         .data (zeroColour)
     );
     
-    dataregister register4(
+    palette register4and5(
+        .clk (vclk),
         .dataIn (data),
         .dataOut (dataOut),
         .load (load),
-        .selected (selected_register[4]),
-        .data (paletteSelect)
+        .palette_id (palette_id),
+        .select (selected_register[4] || selected_register[5]),
+        .address (selected_register[5]),
+        .rgb (viewportStream)
     );
     
-    dataregister register5(
-        .dataIn (data),
-        .dataOut (dataOut),
-        .load (load),
-        .selected (selected_register[5]),
-        .data (paletteData)
-    );
+//    dataregister register4(
+//        .dataIn (data),
+//        .dataOut (dataOut),
+//        .load (load),
+//        .selected (selected_register[4]),
+//        .data (paletteSelect)
+//    );
+    
+//    dataregister register5(
+//        .dataIn (data),
+//        .dataOut (dataOut),
+//        .load (load),
+//        .selected (selected_register[5]),
+//        .data (paletteData)
+//    );
     
     dataregister register6(
         .dataIn (data),

@@ -27,7 +27,6 @@ module timing(
     input [8:0] porty,
     input [7:0] height,
     input [8:0] maxy,
-    input format,
     input sprite,
     output nhsync,
     output nvsync,
@@ -48,7 +47,7 @@ module timing(
     assign preload = portx - 8;
     assign preloadend = portendx - 8;
     
-    wire rowReset;
+    bit rowReset;
     assign rowReset = (countx == 458);
     
     count_extender #(.WIDTH(10)) colCount (
@@ -69,19 +68,23 @@ module timing(
 	   .count(preloadcount)
 	);
 	
-	wire frameReset;
-	assign frameReset = (county == maxy);
-	
-	counter #(.WIDTH(9)) rowCount (
-		.clk(~rowReset),
-		.reset(frameReset),
-		.enable(1'b1),
-		.count(county)
-	);
-	
 	bit top;
 	bit left;
 	bit view;
+	
+	wire frameReset;
+	assign frameReset = (county == maxy);
+	
+	c_counter_binary_0 rowCount(
+	   .CLK (~rowReset),
+	   .SCLR (~frameReset),
+	   .Q (county)
+	);
+//	rowcounter rowCount (
+//		.rowclk(~rowReset),
+//		.reset(frameReset),
+//		.count(county)
+//	);
 	
 	assign top = county <= 7;
 	assign left = countx <= 28;

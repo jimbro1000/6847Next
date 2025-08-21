@@ -3,9 +3,9 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date: 12.07.2025 19:23:38
+// Create Date: 19.07.2025 19:44:22
 // Design Name: 
-// Module Name: count_extender
+// Module Name: rowcounter
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 
@@ -19,24 +19,18 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
-module count_extender
-	#(parameter WIDTH = 8)
-(
-    input bit clk,
-    input reset,
-	input enable,
-    output [WIDTH-1:0] count
-);
-	 
-	reg [WIDTH-2:0] cheatCount;
-	 
+
+module rowcounter(
+    input bit rowclk,
+    input bit reset, // active high
+    output reg [8:0] count
+    );
+    
 	initial begin
-		cheatCount = 0;
+		count = 9'b000000000;
 	end
+	
+	always @(negedge rowclk)
+	    count <= reset ? 0 : (count + 9'b000000001);
 
-	assign count = {cheatCount, clk};
-
-	always @(negedge clk) begin
-	    cheatCount = reset ? 0 : enable ? cheatCount + 1 : cheatCount;
-	end
 endmodule

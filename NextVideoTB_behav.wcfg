@@ -11,15 +11,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="0.000 ns"></ZoomStartTime>
-      <ZoomEndTime time="86.701 ns"></ZoomEndTime>
-      <Cursor1Time time="0.000 ns"></Cursor1Time>
+      <ZoomStartTime time="19,999,027.704 ns"></ZoomStartTime>
+      <ZoomEndTime time="20,000,194.460 ns"></ZoomEndTime>
+      <Cursor1Time time="20,000,000.000 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="101"></NameColumnWidth>
-      <ValueColumnWidth column_width="63"></ValueColumnWidth>
+      <NameColumnWidth column_width="59"></NameColumnWidth>
+      <ValueColumnWidth column_width="58"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="26" />
+   <WVObjectSize size="24" />
    <wvobject fp_name="/NextVideoTB/CS" type="logic">
       <obj_property name="ElementShortName">CS</obj_property>
       <obj_property name="ObjectShortName">CS</obj_property>
@@ -46,25 +46,17 @@
       <obj_property name="ElementShortName">gclk</obj_property>
       <obj_property name="ObjectShortName">gclk</obj_property>
    </wvobject>
+   <wvobject fp_name="/NextVideoTB/u_nextvideo/nload" type="logic">
+      <obj_property name="ElementShortName">nload</obj_property>
+      <obj_property name="ObjectShortName">nload</obj_property>
+   </wvobject>
+   <wvobject fp_name="/NextVideoTB/u_nextvideo/addresscounter/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
    <wvobject fp_name="/NextVideoTB/da" type="array">
       <obj_property name="ElementShortName">da[12:0]</obj_property>
       <obj_property name="ObjectShortName">da[12:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/NextVideoTB/data" type="array">
-      <obj_property name="ElementShortName">data[7:0]</obj_property>
-      <obj_property name="ObjectShortName">data[7:0]</obj_property>
-      <obj_property name="CustomSignalColor">#00FFFF</obj_property>
-      <obj_property name="UseCustomSignalColor">true</obj_property>
-   </wvobject>
-   <wvobject fp_name="/NextVideoTB/u_nextvideo/dataOut" type="array">
-      <obj_property name="ElementShortName">dataOut[7:0]</obj_property>
-      <obj_property name="ObjectShortName">dataOut[7:0]</obj_property>
-      <obj_property name="CustomSignalColor">#FFD700</obj_property>
-      <obj_property name="UseCustomSignalColor">true</obj_property>
-   </wvobject>
-   <wvobject fp_name="/NextVideoTB/dataInput" type="array">
-      <obj_property name="ElementShortName">dataInput[7:0]</obj_property>
-      <obj_property name="ObjectShortName">dataInput[7:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/NextVideoTB/rgbout" type="array">
       <obj_property name="ElementShortName">rgbout[11:0]</obj_property>
@@ -78,60 +70,56 @@
       <obj_property name="ElementShortName">NFS</obj_property>
       <obj_property name="ObjectShortName">NFS</obj_property>
    </wvobject>
-   <wvobject fp_name="/NextVideoTB/u_nextvideo/frametiming/rowCount/clk" type="logic">
-      <obj_property name="ElementShortName">clk</obj_property>
-      <obj_property name="ObjectShortName">clk</obj_property>
-   </wvobject>
-   <wvobject fp_name="/NextVideoTB/u_nextvideo/frametiming/clock" type="logic">
-      <obj_property name="ElementShortName">clock</obj_property>
-      <obj_property name="ObjectShortName">clock</obj_property>
-   </wvobject>
-   <wvobject fp_name="/NextVideoTB/u_nextvideo/frametiming/format" type="logic">
-      <obj_property name="ElementShortName">format</obj_property>
-      <obj_property name="ObjectShortName">format</obj_property>
-   </wvobject>
-   <wvobject fp_name="/NextVideoTB/u_nextvideo/frametiming/nhsync" type="logic">
-      <obj_property name="ElementShortName">nhsync</obj_property>
-      <obj_property name="ObjectShortName">nhsync</obj_property>
-   </wvobject>
-   <wvobject fp_name="/NextVideoTB/u_nextvideo/frametiming/nvsync" type="logic">
-      <obj_property name="ElementShortName">nvsync</obj_property>
-      <obj_property name="ObjectShortName">nvsync</obj_property>
-   </wvobject>
    <wvobject fp_name="/NextVideoTB/u_nextvideo/frametiming/state" type="array">
       <obj_property name="ElementShortName">state[1:0]</obj_property>
       <obj_property name="ObjectShortName">state[1:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/NextVideoTB/u_nextvideo/frametiming/countx" type="array">
-      <obj_property name="ElementShortName">countx[9:0]</obj_property>
-      <obj_property name="ObjectShortName">countx[9:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/NextVideoTB/u_nextvideo/frametiming/county" type="array">
-      <obj_property name="ElementShortName">county[8:0]</obj_property>
-      <obj_property name="ObjectShortName">county[8:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/NextVideoTB/u_nextvideo/frametiming/maxy" type="array">
-      <obj_property name="ElementShortName">maxy[8:0]</obj_property>
-      <obj_property name="ObjectShortName">maxy[8:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/NextVideoTB/u_nextvideo/frametiming/left" type="logic">
-      <obj_property name="ElementShortName">left</obj_property>
-      <obj_property name="ObjectShortName">left</obj_property>
    </wvobject>
    <wvobject fp_name="/NextVideoTB/u_nextvideo/frametiming/top" type="logic">
       <obj_property name="ElementShortName">top</obj_property>
       <obj_property name="ObjectShortName">top</obj_property>
    </wvobject>
-   <wvobject fp_name="/NextVideoTB/u_nextvideo/frametiming/view" type="logic">
-      <obj_property name="ElementShortName">view</obj_property>
-      <obj_property name="ObjectShortName">view</obj_property>
+   <wvobject fp_name="/NextVideoTB/u_nextvideo/frametiming/left" type="logic">
+      <obj_property name="ElementShortName">left</obj_property>
+      <obj_property name="ObjectShortName">left</obj_property>
    </wvobject>
-   <wvobject fp_name="/NextVideoTB/u_nextvideo/compatibilitymode" type="logic">
-      <obj_property name="ElementShortName">compatibilitymode</obj_property>
-      <obj_property name="ObjectShortName">compatibilitymode</obj_property>
+   <wvobject fp_name="/NextVideoTB/u_nextvideo/frametiming/countx" type="array">
+      <obj_property name="ElementShortName">countx[9:0]</obj_property>
+      <obj_property name="ObjectShortName">countx[9:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/NextVideoTB/u_nextvideo/rowCounter" type="array">
+      <obj_property name="ElementShortName">rowCounter[7:0]</obj_property>
+      <obj_property name="ObjectShortName">rowCounter[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/NextVideoTB/u_nextvideo/frametiming/maxy" type="array">
+      <obj_property name="ElementShortName">maxy[8:0]</obj_property>
+      <obj_property name="ObjectShortName">maxy[8:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/NextVideoTB/u_nextvideo/regaddress" type="array">
       <obj_property name="ElementShortName">regaddress[3:0]</obj_property>
       <obj_property name="ObjectShortName">regaddress[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/NextVideoTB/u_nextvideo/modeRegister" type="array">
+      <obj_property name="ElementShortName">modeRegister[7:0]</obj_property>
+      <obj_property name="ObjectShortName">modeRegister[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/NextVideoTB/u_nextvideo/zeroLeft" type="array">
+      <obj_property name="ElementShortName">zeroLeft[7:0]</obj_property>
+      <obj_property name="ObjectShortName">zeroLeft[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/NextVideoTB/u_nextvideo/zeroRight" type="array">
+      <obj_property name="ElementShortName">zeroRight[7:0]</obj_property>
+      <obj_property name="ObjectShortName">zeroRight[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/NextVideoTB/u_nextvideo/zeroColour" type="array">
+      <obj_property name="ElementShortName">zeroColour[7:0]</obj_property>
+      <obj_property name="ObjectShortName">zeroColour[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/NextVideoTB/u_nextvideo/palette_id" type="array">
+      <obj_property name="ElementShortName">palette_id[4:0]</obj_property>
+      <obj_property name="ObjectShortName">palette_id[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/NextVideoTB/u_nextvideo/viewportStream" type="array">
+      <obj_property name="ElementShortName">viewportStream[11:0]</obj_property>
+      <obj_property name="ObjectShortName">viewportStream[11:0]</obj_property>
    </wvobject>
 </wave_config>
