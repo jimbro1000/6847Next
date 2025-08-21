@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="impl_1" LaunchPart="xc7a15tcsg325-3" LaunchTime="1755707423">
+  <File Type="PA-TCL" Name="nextvideo.tcl"/>
+  <File Type="REPORTS-TCL" Name="nextvideo_reports.tcl"/>
+  <File Type="INIT-TIMING" Name="nextvideo_timing_summary_init.rpt"/>
+  <File Type="OPT-DCP" Name="nextvideo_opt.dcp"/>
+  <File Type="OPT-DRC" Name="nextvideo_drc_opted.rpt"/>
+  <File Type="OPT-UTIL" Name="nextvideo_utilization_opted.rpt"/>
+  <File Type="OPT-UTIL-PB" Name="nextvideo_utilization_opted.pb"/>
+  <File Type="OPT-METHODOLOGY-DRC" Name="nextvideo_methodology_drc_opted.rpt"/>
+  <File Type="OPT-HWDEF" Name="nextvideo.hwdef"/>
+  <File Type="OPT-TIMING" Name="nextvideo_timing_summary_opted.rpt"/>
+  <File Type="OPT-RQA-PB" Name="nextvideo_rqa_opted.pb"/>
+  <File Type="PWROPT-DCP" Name="nextvideo_pwropt.dcp"/>
+  <File Type="PWROPT-DRC" Name="nextvideo_drc_pwropted.rpt"/>
+  <File Type="PWROPT-TIMING" Name="nextvideo_timing_summary_pwropted.rpt"/>
+  <File Type="PLACE-DCP" Name="nextvideo_placed.dcp"/>
+  <File Type="PLACE-IO" Name="nextvideo_io_placed.rpt"/>
+  <File Type="PLACE-CLK" Name="nextvideo_clock_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL" Name="nextvideo_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL-PB" Name="nextvideo_utilization_placed.pb"/>
+  <File Type="PLACE-CTRL" Name="nextvideo_control_sets_placed.rpt"/>
+  <File Type="PLACE-SIMILARITY" Name="nextvideo_incremental_reuse_placed.rpt"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="nextvideo_incremental_reuse_pre_placed.rpt"/>
+  <File Type="PLACE-TIMING" Name="nextvideo_timing_summary_placed.rpt"/>
+  <File Type="PLACE-RQA-PB" Name="nextvideo_rqa_placed.pb"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="nextvideo_postplace_pwropt.dcp"/>
+  <File Type="POSTPLACE-PWROPT-TIMING" Name="nextvideo_timing_summary_postplace_pwropted.rpt"/>
+  <File Type="PHYSOPT-DCP" Name="nextvideo_physopt.dcp"/>
+  <File Type="PHYSOPT-DRC" Name="nextvideo_drc_physopted.rpt"/>
+  <File Type="PHYSOPT-TIMING" Name="nextvideo_timing_summary_physopted.rpt"/>
+  <File Type="ROUTE-ERROR-DCP" Name="nextvideo_routed_error.dcp"/>
+  <File Type="ROUTE-DCP" Name="nextvideo_routed.dcp"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="nextvideo_routed_bb.dcp"/>
+  <File Type="ROUTE-UTIL" Name="nextvideo_utilization_routed.rpt"/>
+  <File Type="ROUTE-UTIL-PB" Name="nextvideo_utilization_routed.pb"/>
+  <File Type="ROUTE-DRC" Name="nextvideo_drc_routed.rpt"/>
+  <File Type="ROUTE-DRC-PB" Name="nextvideo_drc_routed.pb"/>
+  <File Type="ROUTE-DRC-RPX" Name="nextvideo_drc_routed.rpx"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="nextvideo_methodology_drc_routed.rpt"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="nextvideo_methodology_drc_routed.rpx"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="nextvideo_methodology_drc_routed.pb"/>
+  <File Type="ROUTE-PWR" Name="nextvideo_power_routed.rpt"/>
+  <File Type="ROUTE-PWR-SUM" Name="nextvideo_power_summary_routed.pb"/>
+  <File Type="ROUTE-PWR-RPX" Name="nextvideo_power_routed.rpx"/>
+  <File Type="ROUTE-STATUS" Name="nextvideo_route_status.rpt"/>
+  <File Type="ROUTE-STATUS-PB" Name="nextvideo_route_status.pb"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="nextvideo_timing_summary_routed.rpt"/>
+  <File Type="ROUTE-TIMING-PB" Name="nextvideo_timing_summary_routed.pb"/>
+  <File Type="ROUTE-TIMING-RPX" Name="nextvideo_timing_summary_routed.rpx"/>
+  <File Type="ROUTE-SIMILARITY" Name="nextvideo_incremental_reuse_routed.rpt"/>
+  <File Type="ROUTE-CLK" Name="nextvideo_clock_utilization_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW" Name="nextvideo_bus_skew_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW-PB" Name="nextvideo_bus_skew_routed.pb"/>
+  <File Type="ROUTE-BUS-SKEW-RPX" Name="nextvideo_bus_skew_routed.rpx"/>
+  <File Type="ROUTE-RQS-PB" Name="nextvideo_rqs_routed.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="nextvideo_postroute_physopt.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="nextvideo_postroute_physopt_bb.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="nextvideo_timing_summary_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="nextvideo_timing_summary_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="nextvideo_timing_summary_postroute_physopted.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="nextvideo_bus_skew_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="nextvideo_bus_skew_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="nextvideo_bus_skew_postroute_physopted.rpx"/>
+  <File Type="BG-BIT" Name="nextvideo.bit"/>
+  <File Type="BG-BIN" Name="nextvideo.bin"/>
+  <File Type="BITSTR-MSK" Name="nextvideo.msk"/>
+  <File Type="BITSTR-RBT" Name="nextvideo.rbt"/>
+  <File Type="BITSTR-NKY" Name="nextvideo.nky"/>
+  <File Type="BITSTR-BMM" Name="nextvideo_bd.bmm"/>
+  <File Type="BITSTR-MMI" Name="nextvideo.mmi"/>
+  <File Type="PDI-FILE" Name="nextvideo.pdi"/>
+  <File Type="BOOT-PDI-FILE" Name="nextvideo_boot.pdi"/>
+  <File Type="PL-PDI-FILE" Name="nextvideo_pld.pdi"/>
+  <File Type="RCFI_FILE" Name="nextvideo.rcfi"/>
+  <File Type="CFI_FILE" Name="nextvideo.cfi"/>
+  <File Type="RNPI_FILE" Name="nextvideo.rnpi"/>
+  <File Type="RCDO-FILE" Name="nextvideo.rcdo"/>
+  <File Type="MARKER-RNPI-FILE" Name="nextvideo_markers.rnpi"/>
+  <File Type="MARKER-RCDO-FILE" Name="nextvideo_markers.rcdo"/>
+  <File Type="BOOT_RNPI_FILE" Name="nextvideo_boot.rnpi"/>
+  <File Type="BOOT_MARKER_RNPI_FILE" Name="nextvideo_boot_markers.rnpi"/>
+  <File Type="PL_RNPI_FILE" Name="nextvideo_pld.rnpi"/>
+  <File Type="PL_MARKER_RNPI_FILE" Name="nextvideo_pld_markers.rnpi"/>
+  <File Type="PL_MASK_RNPI_FILE" Name="nextvideo_pld_mask.rnpi"/>
+  <File Type="PL_SHUTDOWN_RNPI_FILE" Name="nextvideo_pld_shutdown.rnpi"/>
+  <File Type="PL_UNMASK_RNPI_FILE" Name="nextvideo_pld_unmask.rnpi"/>
+  <File Type="PL-RCDO-FILE" Name="nextvideo_pld.rcdo"/>
+  <File Type="PL-CLEAR-RCDO-FILE" Name="nextvideo_pld_clear.rcdo"/>
+  <File Type="PL_MARKER_RCDO_FILE" Name="nextvideo_pld_markers.rcdo"/>
+  <File Type="PL_MASK_RCDO_FILE" Name="nextvideo_pld_mask.rcdo"/>
+  <File Type="PL_UNMASK_MARKER_RCDO_FILE" Name="nextvideo_pld_unmask_markers.rcdo"/>
+  <File Type="PL_UNMASK_RCDO_FILE" Name="nextvideo_pld_unmask.rcdo"/>
+  <File Type="NPI_FILE" Name="nextvideo.npi"/>
+  <File Type="RBD_FILE" Name="nextvideo.rbd"/>
+  <File Type="MMI-FILE" Name="nextvideo.mmi"/>
+  <File Type="BIF-FILE" Name="nextvideo.bif"/>
+  <File Type="BOOT-BIF-FILE" Name="nextvideo_boot.bif"/>
+  <File Type="PL-BIF-FILE" Name="nextvideo_pld.bif"/>
+  <File Type="LTX-FILE" Name="nextvideo.ltx"/>
+  <File Type="BOOT-LTX-FILE" Name="nextvideo_boot.ltx"/>
+  <File Type="PL-LTX-FILE" Name="nextvideo_pld.ltx"/>
+  <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
+  <File Type="BITSTR-LTX" Name="nextvideo.ltx"/>
+  <File Type="BITSTR-SYSDEF" Name="nextvideo.sysdef"/>
+  <File Type="BG-BGN" Name="nextvideo.bgn"/>
+  <File Type="BG-DRC" Name="nextvideo.drc"/>
+  <File Type="RDI-RDI" Name="nextvideo.vdi"/>
+  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
+  <File Type="ROUTE-RQS" Name="nextvideo_routed.rqs"/>
+  <File Type="POSTROUTE-PHYSOPT-RQS" Name="nextvideo_postroute_physopted.rqs"/>
+  <File Type="ROUTE-RQS-RPT" Name="route_report_qor_suggestions_0.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-RQS-RPT" Name="postroute_physopt_report_qor_suggestions_0.rpt"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/new/address_counter.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/count_extender.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/counter.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/dataregister.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/dataregisterwithdefault.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/geometry.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/palette.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/palettesource.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/pixelmux.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/registermultiplexer.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/timing.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/videomodeselect.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/zeroramvideo.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/nextvideo.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/rowcounter.sv">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/counter_doubleedge.sv">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="nextvideo"/>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1" RelGenDir="$PGENDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <File Path="$PSRCDIR/constrs_1/new/NextVideo.xdc">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="TargetConstrsFile" Val="$PSRCDIR/constrs_1/new/NextVideo.xdc"/>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1" RelGenDir="$PGENDIR/utils_1">
+    <Filter Type="Utils"/>
+    <File Path="$PSRCDIR/utils_1/imports/synth_1/nextvideo.dcp">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedInSteps" Val="synth_1"/>
+        <Attr Name="AutoDcp" Val="1"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2024"/>
+    <Step Id="init_design"/>
+    <Step Id="opt_design"/>
+    <Step Id="power_opt_design"/>
+    <Step Id="place_design"/>
+    <Step Id="post_place_power_opt_design"/>
+    <Step Id="phys_opt_design"/>
+    <Step Id="route_design"/>
+    <Step Id="post_route_phys_opt_design"/>
+    <Step Id="write_bitstream"/>
+  </Strategy>
+  <BlockFileSet Type="BlockSrcs" Name="c_counter_binary_0"/>
+</GenRun>
