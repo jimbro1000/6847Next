@@ -29,6 +29,9 @@ module NextVideoTB;
     bit CS;
     bit RnW;
     bit vclk;
+    bit PALClk;
+    bit ModClk;
+    bit format;
     bit [2:0] gm;
     bit nAG;
     bit nAS;
@@ -70,7 +73,7 @@ module NextVideoTB;
     initial begin
         #139
         regaddress = 4'b0000; //operation mode
-        dataInput = 8'b01000000; //zero ram mode
+        dataInput = 8'b10000000; //NTSC compatibility mode
         RnW = 1'b0;
         #1112
         regaddress = 4'b0001; //zero reg left

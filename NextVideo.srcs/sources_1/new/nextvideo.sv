@@ -107,13 +107,14 @@ module nextvideo(
     assign maxy = compatibilitymode ? geometryMaxy : format ? 258 : 311;
 
     timing frametiming(
+        .gclk(gclk),
         .clock(vclk),
         .portx(portx),
         .width(width),
         .porty(porty),
         .height(height),
         .maxy(maxy),
-        .sprite(0),
+        .sprite(1'b0),
         .nhsync(NHS),
         .nvsync(NFS),
         .state(framestate),
@@ -174,11 +175,12 @@ module nextvideo(
         .selected (selected_register)
     );
     
-    dataregister register0(
+    dataregisterwithdefault register0(
         .dataIn (data),
         .dataOut (dataOut),
         .load (load),
         .selected (selected_register[0]),
+        .defaultValue (8'b10000000), //NTSC compatibility mode
         .data (modeRegister)
     );
     

@@ -21,6 +21,7 @@
 
 
 module timing(
+    input gclk,
     input clock,
     input [9:0] portx,
     input [5:0] width,
@@ -73,18 +74,13 @@ module timing(
 	bit view;
 	
 	wire frameReset;
-	assign frameReset = (county == maxy);
+	assign frameReset = ~(county == maxy);
 	
 	c_counter_binary_0 rowCount(
 	   .CLK (~rowReset),
 	   .SCLR (~frameReset),
 	   .Q (county)
 	);
-//	rowcounter rowCount (
-//		.rowclk(~rowReset),
-//		.reset(frameReset),
-//		.count(county)
-//	);
 	
 	assign top = county <= 7;
 	assign left = countx <= 28;
@@ -97,4 +93,14 @@ module timing(
     assign nvsync = state != 2'b00;
     assign nhsync = state != 2'b01;
 	assign nload = preloadcount != 2'b00;
+	
+	ila_0 ila_probes (
+	.clk(gclk), // input wire clk
+
+	.probe0(countx), // input wire [9:0]  probe0  
+	.probe1(county), // input wire [0:0]  probe1 
+	.probe2(nhsync), // input wire [0:0]  probe2 
+	.probe3(nvsync), // input wire [0:0]  probe3 
+	.probe4(clock) // input wire [0:0]  probe4
+);
 endmodule

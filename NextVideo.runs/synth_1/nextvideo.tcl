@@ -4,7 +4,7 @@
 
 set TIME_start [clock seconds] 
 namespace eval ::optrace {
-  variable script "H:/Vivado/NextVideo/NextVideo.runs/synth_1/nextvideo.tcl"
+  variable script "E:/Users/Julian/Documents/Vivado/6847Next/NextVideo.runs/synth_1/nextvideo.tcl"
   variable category "vivado_synth"
 }
 
@@ -56,8 +56,10 @@ if {$::dispatch::connected} {
 }
 
 OPTRACE "synth_1" START { ROLLUP_AUTO }
+set_param tcl.collectionResultDisplayLimit 0
 set_param chipscope.maxJobs 4
 set_param general.usePosixSpawnForFork 1
+set_param xicom.use_bs_reader 1
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a15tcsg325-3
 
@@ -65,32 +67,39 @@ set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
 set_msg_config -source 4 -id {IP_Flow 19-2162} -severity warning -new_severity info
-set_property webtalk.parent_dir H:/Vivado/NextVideo/NextVideo.cache/wt [current_project]
-set_property parent.project_path H:/Vivado/NextVideo/NextVideo.xpr [current_project]
+set_property webtalk.parent_dir E:/Users/Julian/Documents/Vivado/6847Next/NextVideo.cache/wt [current_project]
+set_property parent.project_path E:/Users/Julian/Documents/Vivado/6847Next/NextVideo.xpr [current_project]
+set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
-set_property ip_output_repo h:/Vivado/NextVideo/NextVideo.cache/ip [current_project]
+set_property ip_output_repo e:/Users/Julian/Documents/Vivado/6847Next/NextVideo.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_verilog -library xil_defaultlib -sv {
-  H:/Vivado/NextVideo/NextVideo.srcs/sources_1/new/address_counter.sv
-  H:/Vivado/NextVideo/NextVideo.srcs/sources_1/new/count_extender.sv
-  H:/Vivado/NextVideo/NextVideo.srcs/sources_1/new/counter.sv
-  H:/Vivado/NextVideo/NextVideo.srcs/sources_1/new/dataregister.sv
-  H:/Vivado/NextVideo/NextVideo.srcs/sources_1/new/dataregisterwithdefault.sv
-  H:/Vivado/NextVideo/NextVideo.srcs/sources_1/new/geometry.sv
-  H:/Vivado/NextVideo/NextVideo.srcs/sources_1/new/palette.sv
-  H:/Vivado/NextVideo/NextVideo.srcs/sources_1/new/palettesource.sv
-  H:/Vivado/NextVideo/NextVideo.srcs/sources_1/new/pixelmux.sv
-  H:/Vivado/NextVideo/NextVideo.srcs/sources_1/new/registermultiplexer.sv
-  H:/Vivado/NextVideo/NextVideo.srcs/sources_1/new/timing.sv
-  H:/Vivado/NextVideo/NextVideo.srcs/sources_1/new/videomodeselect.sv
-  H:/Vivado/NextVideo/NextVideo.srcs/sources_1/new/zeroramvideo.sv
-  H:/Vivado/NextVideo/NextVideo.srcs/sources_1/new/nextvideo.sv
+  E:/Users/Julian/Documents/Vivado/6847Next/NextVideo.srcs/sources_1/new/address_counter.sv
+  E:/Users/Julian/Documents/Vivado/6847Next/NextVideo.srcs/sources_1/new/count_extender.sv
+  E:/Users/Julian/Documents/Vivado/6847Next/NextVideo.srcs/sources_1/new/counter.sv
+  E:/Users/Julian/Documents/Vivado/6847Next/NextVideo.srcs/sources_1/new/dataregister.sv
+  E:/Users/Julian/Documents/Vivado/6847Next/NextVideo.srcs/sources_1/new/dataregisterwithdefault.sv
+  E:/Users/Julian/Documents/Vivado/6847Next/NextVideo.srcs/sources_1/new/geometry.sv
+  E:/Users/Julian/Documents/Vivado/6847Next/NextVideo.srcs/sources_1/new/palette.sv
+  E:/Users/Julian/Documents/Vivado/6847Next/NextVideo.srcs/sources_1/new/palettesource.sv
+  E:/Users/Julian/Documents/Vivado/6847Next/NextVideo.srcs/sources_1/new/pixelmux.sv
+  E:/Users/Julian/Documents/Vivado/6847Next/NextVideo.srcs/sources_1/new/registermultiplexer.sv
+  E:/Users/Julian/Documents/Vivado/6847Next/NextVideo.srcs/sources_1/new/timing.sv
+  E:/Users/Julian/Documents/Vivado/6847Next/NextVideo.srcs/sources_1/new/videomodeselect.sv
+  E:/Users/Julian/Documents/Vivado/6847Next/NextVideo.srcs/sources_1/new/zeroramvideo.sv
+  E:/Users/Julian/Documents/Vivado/6847Next/NextVideo.srcs/sources_1/new/nextvideo.sv
 }
-read_ip -quiet H:/Vivado/NextVideo/NextVideo.srcs/sources_1/ip/c_counter_binary_0/c_counter_binary_0.xci
-set_property used_in_implementation false [get_files -all h:/Vivado/NextVideo/NextVideo.gen/sources_1/ip/c_counter_binary_0/c_counter_binary_0_ooc.xdc]
+read_ip -quiet E:/Users/Julian/Documents/Vivado/6847Next/NextVideo.srcs/sources_1/ip/c_counter_binary_0/c_counter_binary_0.xci
+set_property used_in_implementation false [get_files -all e:/Users/Julian/Documents/Vivado/6847Next/NextVideo.gen/sources_1/ip/c_counter_binary_0/c_counter_binary_0_ooc.xdc]
+
+read_ip -quiet e:/Users/Julian/Documents/Vivado/6847Next/NextVideo.srcs/sources_1/ip/ila_0/ila_0.xci
+set_property used_in_synthesis false [get_files -all e:/Users/Julian/Documents/Vivado/6847Next/NextVideo.gen/sources_1/ip/ila_0/ila_v6_2/constraints/ila_impl.xdc]
+set_property used_in_implementation false [get_files -all e:/Users/Julian/Documents/Vivado/6847Next/NextVideo.gen/sources_1/ip/ila_0/ila_v6_2/constraints/ila_impl.xdc]
+set_property used_in_implementation false [get_files -all e:/Users/Julian/Documents/Vivado/6847Next/NextVideo.gen/sources_1/ip/ila_0/ila_v6_2/constraints/ila.xdc]
+set_property used_in_implementation false [get_files -all e:/Users/Julian/Documents/Vivado/6847Next/NextVideo.gen/sources_1/ip/ila_0/ila_0_ooc.xdc]
 
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
@@ -101,12 +110,12 @@ OPTRACE "Adding files" END { }
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc H:/Vivado/NextVideo/NextVideo.srcs/constrs_1/new/NextVideo.xdc
-set_property used_in_implementation false [get_files H:/Vivado/NextVideo/NextVideo.srcs/constrs_1/new/NextVideo.xdc]
+read_xdc E:/Users/Julian/Documents/Vivado/6847Next/NextVideo.srcs/constrs_1/new/NextVideo.xdc
+set_property used_in_implementation false [get_files E:/Users/Julian/Documents/Vivado/6847Next/NextVideo.srcs/constrs_1/new/NextVideo.xdc]
 
 set_param ips.enableIPCacheLiteLoad 1
 
-read_checkpoint -auto_incremental -incremental H:/Vivado/NextVideo/NextVideo.srcs/utils_1/imports/synth_1/nextvideo.dcp
+read_checkpoint -auto_incremental -incremental E:/Users/Julian/Documents/Vivado/6847Next/NextVideo.srcs/utils_1/imports/synth_1/nextvideo.dcp
 close [open __synthesis_is_running__ w]
 
 OPTRACE "synth_design" START { }
