@@ -104,7 +104,8 @@ module nextvideo(
     assign height = compatibilitymode ? geometryHeight : 192;
     assign portx = compatibilitymode ? geometryPortx : 129;
     assign porty = compatibilitymode ? geometryPorty : 63;
-    assign maxy = compatibilitymode ? geometryMaxy : format ? 258 : 311;
+//    assign maxy = compatibilitymode ? geometryMaxy : format ? 258 : 311;
+    assign maxy = 258;
 
     timing frametiming(
         .gclk(gclk),

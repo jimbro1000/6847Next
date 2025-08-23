@@ -124,7 +124,7 @@ OPTRACE "set parameters" END { }
 OPTRACE "add files" START { }
   add_files -quiet E:/Users/Julian/Documents/Vivado/6847Next/NextVideo.runs/synth_1/nextvideo.dcp
   read_ip -quiet E:/Users/Julian/Documents/Vivado/6847Next/NextVideo.srcs/sources_1/ip/c_counter_binary_0/c_counter_binary_0.xci
-  read_ip -quiet e:/Users/Julian/Documents/Vivado/6847Next/NextVideo.srcs/sources_1/ip/ila_0/ila_0.xci
+  read_ip -quiet E:/Users/Julian/Documents/Vivado/6847Next/NextVideo.srcs/sources_1/ip/ila_0/ila_0.xci
 OPTRACE "read constraints: implementation" START { }
   read_xdc E:/Users/Julian/Documents/Vivado/6847Next/NextVideo.srcs/constrs_1/new/NextVideo.xdc
 OPTRACE "read constraints: implementation" END { }

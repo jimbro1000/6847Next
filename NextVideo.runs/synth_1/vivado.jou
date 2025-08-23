@@ -3,8 +3,8 @@
 # SW Build 6140274 on Thu May 22 00:12:29 MDT 2025
 # IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
 # SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
-# Start of session at: Fri Aug 22 16:59:12 2025
-# Process ID         : 48904
+# Start of session at: Sat Aug 23 16:39:07 2025
+# Process ID         : 41656
 # Current directory  : E:/Users/Julian/Documents/Vivado/6847Next/NextVideo.runs/synth_1
 # Command line       : vivado.exe -log nextvideo.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source nextvideo.tcl
 # Log file           : E:/Users/Julian/Documents/Vivado/6847Next/NextVideo.runs/synth_1/nextvideo.vds
@@ -19,6 +19,6 @@
 # Host memory        : 34189 MB
 # Swap memory        : 77309 MB
 # Total Virtual      : 111498 MB
-# Available Virtual  : 59490 MB
+# Available Virtual  : 46589 MB
 #-----------------------------------------------------------
 source nextvideo.tcl -notrace

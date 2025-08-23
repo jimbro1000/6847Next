@@ -1,7 +1,7 @@
-Running: xsim.dir/NextVideoTB_behav/xsimk.exe -simmode gui -wdb NextVideoTB_behav.wdb -simrunnum 0 -socket 63773
+Running: xsim.dir/NextVideoTB_behav/xsimk.exe -simmode gui -wdb NextVideoTB_behav.wdb -simrunnum 0 -socket 49931
 Design successfully loaded
-Design Loading Memory Usage: 11136 KB (Peak: 11136 KB)
-Design Loading CPU Usage: 62 ms
+Design Loading Memory Usage: 11156 KB (Peak: 11156 KB)
+Design Loading CPU Usage: 31 ms
 Simulation completed
-Simulation Memory Usage: 20012 KB (Peak: 20012 KB)
-Simulation CPU Usage: 218 ms
+Simulation Memory Usage: 20052 KB (Peak: 20052 KB)
+Simulation CPU Usage: 4936 ms

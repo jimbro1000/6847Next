@@ -95,7 +95,7 @@ read_verilog -library xil_defaultlib -sv {
 read_ip -quiet E:/Users/Julian/Documents/Vivado/6847Next/NextVideo.srcs/sources_1/ip/c_counter_binary_0/c_counter_binary_0.xci
 set_property used_in_implementation false [get_files -all e:/Users/Julian/Documents/Vivado/6847Next/NextVideo.gen/sources_1/ip/c_counter_binary_0/c_counter_binary_0_ooc.xdc]
 
-read_ip -quiet e:/Users/Julian/Documents/Vivado/6847Next/NextVideo.srcs/sources_1/ip/ila_0/ila_0.xci
+read_ip -quiet E:/Users/Julian/Documents/Vivado/6847Next/NextVideo.srcs/sources_1/ip/ila_0/ila_0.xci
 set_property used_in_synthesis false [get_files -all e:/Users/Julian/Documents/Vivado/6847Next/NextVideo.gen/sources_1/ip/ila_0/ila_v6_2/constraints/ila_impl.xdc]
 set_property used_in_implementation false [get_files -all e:/Users/Julian/Documents/Vivado/6847Next/NextVideo.gen/sources_1/ip/ila_0/ila_v6_2/constraints/ila_impl.xdc]
 set_property used_in_implementation false [get_files -all e:/Users/Julian/Documents/Vivado/6847Next/NextVideo.gen/sources_1/ip/ila_0/ila_v6_2/constraints/ila.xdc]

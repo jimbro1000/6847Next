@@ -11,15 +11,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="0.000000 us"></ZoomStartTime>
-      <ZoomEndTime time="258.000001 us"></ZoomEndTime>
-      <Cursor1Time time="26.000000 us"></Cursor1Time>
+      <ZoomStartTime time="0.000000000 ms"></ZoomStartTime>
+      <ZoomEndTime time="34.228925151 ms"></ZoomEndTime>
+      <Cursor1Time time="10.000000000 ms"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="137"></NameColumnWidth>
+      <NameColumnWidth column_width="125"></NameColumnWidth>
       <ValueColumnWidth column_width="58"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="29" />
+   <WVObjectSize size="31" />
    <wvobject fp_name="/NextVideoTB/CS" type="logic">
       <obj_property name="ElementShortName">CS</obj_property>
       <obj_property name="ObjectShortName">CS</obj_property>
@@ -71,16 +71,28 @@
       <obj_property name="ObjectShortName">NFS</obj_property>
    </wvobject>
    <wvobject fp_name="/NextVideoTB/u_nextvideo/frametiming/countx" type="array">
-      <obj_property name="ElementShortName">countx[9:0]</obj_property>
-      <obj_property name="ObjectShortName">countx[9:0]</obj_property>
+      <obj_property name="ElementShortName">countx[8:0]</obj_property>
+      <obj_property name="ObjectShortName">countx[8:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/NextVideoTB/u_nextvideo/frametiming/rowReset" type="logic">
       <obj_property name="ElementShortName">rowReset</obj_property>
       <obj_property name="ObjectShortName">rowReset</obj_property>
    </wvobject>
+   <wvobject fp_name="/NextVideoTB/u_nextvideo/frametiming/rowCount/CLK" type="logic">
+      <obj_property name="ElementShortName">CLK</obj_property>
+      <obj_property name="ObjectShortName">CLK</obj_property>
+   </wvobject>
+   <wvobject fp_name="/NextVideoTB/u_nextvideo/frametiming/rowCount/SCLR" type="logic">
+      <obj_property name="ElementShortName">SCLR</obj_property>
+      <obj_property name="ObjectShortName">SCLR</obj_property>
+   </wvobject>
    <wvobject fp_name="/NextVideoTB/u_nextvideo/frametiming/county" type="array">
       <obj_property name="ElementShortName">county[8:0]</obj_property>
       <obj_property name="ObjectShortName">county[8:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/NextVideoTB/u_nextvideo/frametiming/rowCount/Q" type="array">
+      <obj_property name="ElementShortName">Q[12:0]</obj_property>
+      <obj_property name="ObjectShortName">Q[12:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/NextVideoTB/u_nextvideo/frametiming/frameReset" type="logic">
       <obj_property name="ElementShortName">frameReset</obj_property>
@@ -105,10 +117,6 @@
    <wvobject fp_name="/NextVideoTB/u_nextvideo/rowCounter" type="array">
       <obj_property name="ElementShortName">rowCounter[7:0]</obj_property>
       <obj_property name="ObjectShortName">rowCounter[7:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/NextVideoTB/u_nextvideo/frametiming/maxy" type="array">
-      <obj_property name="ElementShortName">maxy[8:0]</obj_property>
-      <obj_property name="ObjectShortName">maxy[8:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/NextVideoTB/u_nextvideo/regaddress" type="array">
       <obj_property name="ElementShortName">regaddress[3:0]</obj_property>

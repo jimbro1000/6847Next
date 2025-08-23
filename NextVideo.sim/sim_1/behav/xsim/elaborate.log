@@ -5,22 +5,22 @@ Running: E:/Xilinx/2025.1/Vivado/bin/unwrapped/win64.o/xelab.exe --incr --debug 
 Using 2 slave threads.
 Starting static elaboration
 Pass Through NonSizing Optimizer
-WARNING: [VRFC 10-9380] size mismatch in mixed-language port association of VHDL port 'q' [E:/Users/Julian/Documents/Vivado/6847Next/NextVideo.srcs/sources_1/new/timing.sv:78]
-WARNING: [VRFC 10-3091] actual bit length 5 differs from formal bit length 6 for port 'palette_id' [E:/Users/Julian/Documents/Vivado/6847Next/NextVideo.srcs/sources_1/new/nextvideo.sv:215]
-WARNING: [VRFC 10-3823] variable 'dataOut' might have multiple concurrent drivers [E:/Users/Julian/Documents/Vivado/6847Next/NextVideo.srcs/sources_1/new/nextvideo.sv:188]
-WARNING: [VRFC 10-3823] variable 'dataOut' might have multiple concurrent drivers [E:/Users/Julian/Documents/Vivado/6847Next/NextVideo.srcs/sources_1/new/nextvideo.sv:196]
-WARNING: [VRFC 10-3823] variable 'dataOut' might have multiple concurrent drivers [E:/Users/Julian/Documents/Vivado/6847Next/NextVideo.srcs/sources_1/new/nextvideo.sv:204]
-WARNING: [VRFC 10-3823] variable 'dataOut' might have multiple concurrent drivers [E:/Users/Julian/Documents/Vivado/6847Next/NextVideo.srcs/sources_1/new/nextvideo.sv:213]
-WARNING: [VRFC 10-3823] variable 'dataOut' might have multiple concurrent drivers [E:/Users/Julian/Documents/Vivado/6847Next/NextVideo.srcs/sources_1/new/nextvideo.sv:239]
-WARNING: [VRFC 10-3823] variable 'dataOut' might have multiple concurrent drivers [E:/Users/Julian/Documents/Vivado/6847Next/NextVideo.srcs/sources_1/new/nextvideo.sv:247]
-WARNING: [VRFC 10-3823] variable 'dataOut' might have multiple concurrent drivers [E:/Users/Julian/Documents/Vivado/6847Next/NextVideo.srcs/sources_1/new/nextvideo.sv:260]
-WARNING: [VRFC 10-3823] variable 'dataOut' might have multiple concurrent drivers [E:/Users/Julian/Documents/Vivado/6847Next/NextVideo.srcs/sources_1/new/nextvideo.sv:268]
-WARNING: [VRFC 10-3823] variable 'dataOut' might have multiple concurrent drivers [E:/Users/Julian/Documents/Vivado/6847Next/NextVideo.srcs/sources_1/new/nextvideo.sv:276]
-WARNING: [VRFC 10-3823] variable 'dataOut' might have multiple concurrent drivers [E:/Users/Julian/Documents/Vivado/6847Next/NextVideo.srcs/sources_1/new/nextvideo.sv:284]
-WARNING: [VRFC 10-3823] variable 'dataOut' might have multiple concurrent drivers [E:/Users/Julian/Documents/Vivado/6847Next/NextVideo.srcs/sources_1/new/nextvideo.sv:292]
-WARNING: [VRFC 10-3823] variable 'dataOut' might have multiple concurrent drivers [E:/Users/Julian/Documents/Vivado/6847Next/NextVideo.srcs/sources_1/new/nextvideo.sv:300]
-WARNING: [VRFC 10-3823] variable 'dataOut' might have multiple concurrent drivers [E:/Users/Julian/Documents/Vivado/6847Next/NextVideo.srcs/sources_1/new/nextvideo.sv:308]
-WARNING: [VRFC 10-3823] variable 'dataOut' might have multiple concurrent drivers [E:/Users/Julian/Documents/Vivado/6847Next/NextVideo.srcs/sources_1/new/nextvideo.sv:316]
+WARNING: [VRFC 10-9380] size mismatch in mixed-language port association of VHDL port 'q' [E:/Users/Julian/Documents/Vivado/6847Next/NextVideo.srcs/sources_1/new/timing.sv:79]
+WARNING: [VRFC 10-3091] actual bit length 5 differs from formal bit length 6 for port 'palette_id' [E:/Users/Julian/Documents/Vivado/6847Next/NextVideo.srcs/sources_1/new/nextvideo.sv:217]
+WARNING: [VRFC 10-3823] variable 'dataOut' might have multiple concurrent drivers [E:/Users/Julian/Documents/Vivado/6847Next/NextVideo.srcs/sources_1/new/nextvideo.sv:190]
+WARNING: [VRFC 10-3823] variable 'dataOut' might have multiple concurrent drivers [E:/Users/Julian/Documents/Vivado/6847Next/NextVideo.srcs/sources_1/new/nextvideo.sv:198]
+WARNING: [VRFC 10-3823] variable 'dataOut' might have multiple concurrent drivers [E:/Users/Julian/Documents/Vivado/6847Next/NextVideo.srcs/sources_1/new/nextvideo.sv:206]
+WARNING: [VRFC 10-3823] variable 'dataOut' might have multiple concurrent drivers [E:/Users/Julian/Documents/Vivado/6847Next/NextVideo.srcs/sources_1/new/nextvideo.sv:215]
+WARNING: [VRFC 10-3823] variable 'dataOut' might have multiple concurrent drivers [E:/Users/Julian/Documents/Vivado/6847Next/NextVideo.srcs/sources_1/new/nextvideo.sv:241]
+WARNING: [VRFC 10-3823] variable 'dataOut' might have multiple concurrent drivers [E:/Users/Julian/Documents/Vivado/6847Next/NextVideo.srcs/sources_1/new/nextvideo.sv:249]
+WARNING: [VRFC 10-3823] variable 'dataOut' might have multiple concurrent drivers [E:/Users/Julian/Documents/Vivado/6847Next/NextVideo.srcs/sources_1/new/nextvideo.sv:262]
+WARNING: [VRFC 10-3823] variable 'dataOut' might have multiple concurrent drivers [E:/Users/Julian/Documents/Vivado/6847Next/NextVideo.srcs/sources_1/new/nextvideo.sv:270]
+WARNING: [VRFC 10-3823] variable 'dataOut' might have multiple concurrent drivers [E:/Users/Julian/Documents/Vivado/6847Next/NextVideo.srcs/sources_1/new/nextvideo.sv:278]
+WARNING: [VRFC 10-3823] variable 'dataOut' might have multiple concurrent drivers [E:/Users/Julian/Documents/Vivado/6847Next/NextVideo.srcs/sources_1/new/nextvideo.sv:286]
+WARNING: [VRFC 10-3823] variable 'dataOut' might have multiple concurrent drivers [E:/Users/Julian/Documents/Vivado/6847Next/NextVideo.srcs/sources_1/new/nextvideo.sv:294]
+WARNING: [VRFC 10-3823] variable 'dataOut' might have multiple concurrent drivers [E:/Users/Julian/Documents/Vivado/6847Next/NextVideo.srcs/sources_1/new/nextvideo.sv:302]
+WARNING: [VRFC 10-3823] variable 'dataOut' might have multiple concurrent drivers [E:/Users/Julian/Documents/Vivado/6847Next/NextVideo.srcs/sources_1/new/nextvideo.sv:310]
+WARNING: [VRFC 10-3823] variable 'dataOut' might have multiple concurrent drivers [E:/Users/Julian/Documents/Vivado/6847Next/NextVideo.srcs/sources_1/new/nextvideo.sv:318]
 WARNING: [VRFC 10-3823] variable 'data' might have multiple concurrent drivers [E:/Users/Julian/Documents/Vivado/6847Next/NextVideo.srcs/sources_1/new/palette.sv:54]
 WARNING: [VRFC 10-3823] variable 'data' might have multiple concurrent drivers [E:/Users/Julian/Documents/Vivado/6847Next/NextVideo.srcs/sources_1/new/palette.sv:63]
 WARNING: [VRFC 10-3823] variable 'data' might have multiple concurrent drivers [E:/Users/Julian/Documents/Vivado/6847Next/NextVideo.srcs/sources_1/new/palette.sv:77]
@@ -63,7 +63,7 @@ Compiling package c_addsub_v12_0_20.c_addsub_v12_0_20_pkg_legacy
 Compiling package c_reg_fd_v12_0_10.c_reg_fd_v12_0_10_viv_comp
 Compiling package c_addsub_v12_0_20.c_addsub_v12_0_20_pkg
 Compiling package unisim.vcomponents
-Compiling module xil_defaultlib.count_extender(WIDTH=10)
+Compiling module xil_defaultlib.count_extender(WIDTH=9)
 Compiling module xil_defaultlib.counter(WIDTH=2)
 Compiling architecture structural of entity c_reg_fd_v12_0_10.c_reg_fd_v12_0_10_viv [\c_reg_fd_v12_0_10_viv(c_width=1...]
 Compiling architecture muxcy_v of entity unisim.MUXCY [muxcy_default]
@@ -75,6 +75,7 @@ Compiling architecture synth of entity c_counter_binary_v12_0_21.c_counter_binar
 Compiling architecture synth of entity c_counter_binary_v12_0_21.c_counter_binary_v12_0_21_viv [\c_counter_binary_v12_0_21_viv(c...]
 Compiling architecture xilinx of entity c_counter_binary_v12_0_21.c_counter_binary_v12_0_21 [\c_counter_binary_v12_0_21(c_xde...]
 Compiling architecture c_counter_binary_0_arch of entity xil_defaultlib.c_counter_binary_0 [c_counter_binary_0_default]
+Compiling module xil_defaultlib.ila_0
 Compiling module xil_defaultlib.timing
 Compiling module xil_defaultlib.videomodeselect
 Compiling module xil_defaultlib.counter(WIDTH=7)

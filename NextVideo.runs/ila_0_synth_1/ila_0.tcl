@@ -56,6 +56,7 @@ if {$::dispatch::connected} {
 }
 
 OPTRACE "ila_0_synth_1" START { ROLLUP_AUTO }
+set_param tcl.collectionResultDisplayLimit 0
 set_param chipscope.maxJobs 4
 set_param general.usePosixSpawnForFork 1
 set_param xicom.use_bs_reader 1
@@ -70,13 +71,14 @@ set_param synth.vivado.isSynthRun true
 set_msg_config -source 4 -id {IP_Flow 19-2162} -severity warning -new_severity info
 set_property webtalk.parent_dir E:/Users/Julian/Documents/Vivado/6847Next/NextVideo.cache/wt [current_project]
 set_property parent.project_path E:/Users/Julian/Documents/Vivado/6847Next/NextVideo.xpr [current_project]
+set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
 set_property ip_output_repo e:/Users/Julian/Documents/Vivado/6847Next/NextVideo.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
-read_ip -quiet e:/Users/Julian/Documents/Vivado/6847Next/NextVideo.srcs/sources_1/ip/ila_0/ila_0.xci
+read_ip -quiet E:/Users/Julian/Documents/Vivado/6847Next/NextVideo.srcs/sources_1/ip/ila_0/ila_0.xci
 set_property used_in_synthesis false [get_files -all e:/Users/Julian/Documents/Vivado/6847Next/NextVideo.gen/sources_1/ip/ila_0/ila_v6_2/constraints/ila_impl.xdc]
 set_property used_in_implementation false [get_files -all e:/Users/Julian/Documents/Vivado/6847Next/NextVideo.gen/sources_1/ip/ila_0/ila_v6_2/constraints/ila_impl.xdc]
 set_property used_in_implementation false [get_files -all e:/Users/Julian/Documents/Vivado/6847Next/NextVideo.gen/sources_1/ip/ila_0/ila_v6_2/constraints/ila.xdc]

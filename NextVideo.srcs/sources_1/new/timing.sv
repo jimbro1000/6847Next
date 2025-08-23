@@ -35,7 +35,7 @@ module timing(
     output nload
     );
     
-    wire [9:0] countx;
+    wire [8:0] countx;
     wire [8:0] county;
     wire [1:0] preloadcount;
     wire [9:0] portendx;
@@ -49,9 +49,9 @@ module timing(
     assign preloadend = portendx - 8;
     
     bit rowReset;
-    assign rowReset = (countx == 458);
+    assign rowReset = (countx[8:1] == 229); //8'b10101011
     
-    count_extender #(.WIDTH(10)) colCount (
+    count_extender #(.WIDTH(9)) colCount (
 		.clk(clock),
 		.reset(rowReset),
 		.enable(1'b1),
@@ -74,10 +74,10 @@ module timing(
 	bit view;
 	
 	wire frameReset;
-	assign frameReset = ~(county == maxy);
+	assign frameReset = ~(county >= maxy);
 	
 	c_counter_binary_0 rowCount(
-	   .CLK (~rowReset),
+	   .CLK (~rowReset), //~rowReset
 	   .SCLR (~frameReset),
 	   .Q (county)
 	);
@@ -97,10 +97,11 @@ module timing(
 	ila_0 ila_probes (
 	.clk(gclk), // input wire clk
 
-	.probe0(countx), // input wire [9:0]  probe0  
-	.probe1(county), // input wire [0:0]  probe1 
+	.probe0(countx), // input wire [8:0]  probe0  
+	.probe1(county), // input wire [8:0]  probe1 
 	.probe2(nhsync), // input wire [0:0]  probe2 
 	.probe3(nvsync), // input wire [0:0]  probe3 
-	.probe4(clock) // input wire [0:0]  probe4
+	.probe4(clock), // input wire [0:0]  probe4
+	.probe5(maxy) // input wire [8:0] probe 5
 );
 endmodule
